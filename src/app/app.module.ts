@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
 import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SearchEmployeeComponent } from './components/search-employee/search-emp
     AppComponent,
     NavbarComponent,
     EmployeesListComponent,
-    SearchEmployeeComponent
+    SearchEmployeeComponent,
+    CreateEmployeeComponent,
   ],
   imports: [
     BrowserModule,

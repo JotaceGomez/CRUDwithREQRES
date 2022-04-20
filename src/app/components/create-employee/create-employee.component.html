@@ -1,0 +1,16 @@
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">First Name</span>
+    <input [(ngModel)]="newEmployee.first_name" type="text" class="form-control" placeholder="First Name" aria-label="FirstName" aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Second Name</span>
+    <input [(ngModel)]="newEmployee.last_name" type="text" class="form-control" placeholder="Second Name" aria-label="SecondName" aria-describedby="basic-addon1">
+  </div>
+
+  
+  <div class="input-group mb-3">
+    <input [(ngModel)]="newEmployee.email" type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <span class="input-group-text" id="basic-addon2">@agilia.com</span>
+  </div>
+
+  <button (click)="createEmployee(newEmployee)" type="submit" class="btn btn-primary mb-3">Create Employee</button>

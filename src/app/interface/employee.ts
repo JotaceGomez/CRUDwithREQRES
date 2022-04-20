@@ -5,3 +5,9 @@ export interface Employee {
     last_name: string;
     avatar: string;
 }
+
+export interface newEmployee {
+    email: string;
+    first_name: string;
+    last_name: string;
+}

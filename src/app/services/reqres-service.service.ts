@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,10 @@ export class ReqresServiceService {
 
   updateUser(user: any) {
     return this.http.put('https://reqres.in/api/users/' + user.id, user);
-  }
+  }  
 
-  deleteUser(id: number) {
-    return this.http.delete('https://reqres.in/api/users/' + id);
+  deleteUser(id:string): Observable<any>{
+    return this.http.delete<any>('https://reqres.in/api/users/' + id)
   }
 
   getUsersByPage(page: number) {
