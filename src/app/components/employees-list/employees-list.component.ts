@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ReqresServiceService } from 'src/app/services/reqres-service.service';
+import { Employee } from 'src/app/interface/employee';
 
 @Component({
   selector: 'app-employees-list',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private reqresService: ReqresServiceService) { }
 
-  ngOnInit(): void {
+  arrEmployees: Employee[] = [];
+
+  ngOnInit(): void { 
+    this.reqresService.getUsers().subscribe((response: any) => {
+      console.log(response);
+      this.arrEmployees = response.data;
+    });
+   }
+
+  getEmployees() {
+    this.reqresService.getUsers().subscribe((response: any) => {
+      console.log(response);
+      this.arrEmployees = response.data;
+    });
+  }    
+
+  prueba() {
+    console.log();
   }
 
 }

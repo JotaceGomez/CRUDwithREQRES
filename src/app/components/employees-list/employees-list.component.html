@@ -1,2 +1,13 @@
-<p>employees-list works!</p>
-hola hola 
+<!-- <button type="button" class="btn btn-success" (click)="getEmployees()">Show all employees</button> -->
+
+<div class="employeeCards">
+    <div class="card mx-2" style="width: 18rem;" *ngFor="let employee of arrEmployees">
+        <img src={{employee?.avatar}} class="card-img-top" alt="ProfilePic">
+        <div class="card-body">
+        <h5 class="card-title">{{employee?.last_name}}, {{employee?.first_name}}</h5>
+        <p class="card-text">email: {{employee?.email}}</p>
+        <p class="card-text">ID: {{employee?.id}}</p>
+        </div>
+    </div>
+</div>
+
