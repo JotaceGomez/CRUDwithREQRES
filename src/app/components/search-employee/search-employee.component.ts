@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Employee } from 'src/app/interface/employee';
 import { ReqresServiceService } from 'src/app/services/reqres-service.service';
+
 
 @Component({
   selector: 'app-search-employee',
@@ -8,13 +11,16 @@ import { ReqresServiceService } from 'src/app/services/reqres-service.service';
 })
 export class SearchEmployeeComponent implements OnInit {
 
-  constructor(private reqresService: ReqresServiceService) { }  
+  employeeById: Employee| any;
 
-  ngOnInit(): void {  }
+  constructor(private reqresService: ReqresServiceService) {   }  
 
-  getUserbyid(id: number){
+  ngOnInit(): void {    }
+
+  getUserById(id: number | any){
     this.reqresService.getUser(id).subscribe((response: any) => {
       console.log(response);
+      this.employeeById = response.data;
     });
   }
 
