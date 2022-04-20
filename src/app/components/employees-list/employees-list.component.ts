@@ -12,23 +12,23 @@ export class EmployeesListComponent implements OnInit {
   constructor(private reqresService: ReqresServiceService) { }
 
   arrEmployees: Employee[] = [];
-
-  ngOnInit(): void { 
-    this.reqresService.getUsers().subscribe((response: any) => {
+  usersPage: number = 1;
+  
+  ngOnInit(): void {
+    this.reqresService.getUsersByPage(this.usersPage).subscribe((response: any) => {
       console.log(response);
       this.arrEmployees = response.data;
     });
-   }
-
-  getEmployees() {
-    this.reqresService.getUsers().subscribe((response: any) => {
-      console.log(response);
-      this.arrEmployees = response.data;
-    });
-  }    
-
-  prueba() {
-    console.log();
   }
 
+  nextPage() {
+    this.usersPage++;
+    if (this.usersPage > 2) {
+      this.usersPage = 1;   
+    }
+    this.reqresService.getUsersByPage(this.usersPage).subscribe((response: any) => {
+      console.log(response);
+      this.arrEmployees = response.data;      
+    });
+  }
 }

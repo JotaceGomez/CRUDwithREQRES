@@ -1,13 +1,16 @@
 <div class="searchBox">
    <input type="text" placeholder="Employee's ID" #box>
-   <button type="button" class="btn btn-success mx-2" (click)="getUserById(box.value)">Search Employee</button>
+   <button type="button" class="btn btn-primary mx-2"  (click)="getUserById(box.value)">Search Employee</button>
 </div>
 
-<div class="card mx-2" style="width: 18rem;">
-    <img src={{employeeById.avatar}} class="card-img-top" alt="ProfilePic">
-    <div class="card-body">
-    <h5 class="card-title">{{employeeById.last_name}}, {{employeeById.first_name}}</h5>
-    <p class="card-text">email: {{employeeById.email}}</p>
-    <p class="card-text">ID: {{employeeById.id}}</p>
+<div *ngIf="box.value;">
+    <div class="card mx-2" style="width: 18rem;">
+        <img src={{employeeById.avatar}}>
+        <div class="card-body">
+        <h5 class="card-title">{{employeeById.last_name}}, {{employeeById.first_name}}</h5>
+        <p class="card-text">email: {{employeeById.email}}</p>
+        <p class="card-text">ID: {{employeeById.id}}</p>
+        </div>
     </div>
+    <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 </div>
