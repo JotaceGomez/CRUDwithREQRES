@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from 'src/app/interface/employee';
 import { ReqresServiceService } from 'src/app/services/reqres-service.service';
 import { newEmployee } from 'src/app/interface/employee';
 

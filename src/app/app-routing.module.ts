@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'all-employees', component: EmployeesListComponent },
   { path: 'search-employee', component: SearchEmployeeComponent },
   { path: 'create-employee', component: CreateEmployeeComponent },
+  { path: '', redirectTo: '/all-employees', pathMatch: 'full' }
 ];
 
 @NgModule({
