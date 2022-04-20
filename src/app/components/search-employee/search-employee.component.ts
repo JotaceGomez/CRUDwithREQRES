@@ -24,8 +24,8 @@ export class SearchEmployeeComponent implements OnInit {
       this.employeeById = response.data;
     });
   }
-  deleteEmployee() {
-    this.reqresService.deleteUser(this.employeeById).subscribe(res =>{     
+  deleteEmployeeById(employeeById: number | any) {
+    this.reqresService.deleteUser(employeeById).subscribe(res =>{     
       this.route.navigate(['/all-employees']);
       alert('Employee Deleted Successfully')
     })
